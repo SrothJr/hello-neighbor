@@ -5,7 +5,7 @@ import "dotenv/config";
 import { connectDB } from "./lib/db.js ";
 import fs from "fs";
 import path from "path";
-import job from "./lib/cron";
+import job from "./lib/cron.js";
 
 const app = express();
 const PORT = process.env.PORT;
