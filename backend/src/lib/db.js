@@ -8,9 +8,9 @@ export async function connectDB() {
             throw new Error("MONGODB_URI is needed!")
         }
 
-        const conn = await mongoose.connect(mongoUri);
+        const conn = await mongoose.connect(mongoUri, {dbName: "hello_neighbor"});
 
-        console.log("MONGODB connected ", conn.connection.host);
+        console.log("MONGODB connected ", conn.connection.host, conn.connection.name);
     } catch (error) {
         console.log("MONGO DB CONNECTION ERROR", error.message);
         process.exit(1);
